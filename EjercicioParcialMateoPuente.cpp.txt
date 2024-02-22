@@ -1,0 +1,282 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+    int numHabitaciones;
+    
+    float hab1l;
+    float hab1w;
+    
+    
+    float hab2l = 0;
+    float hab2w = 0;
+    
+    
+    float hab3l = 0;
+    float hab3w = 0;
+    
+    
+    int numBanos;
+    
+    
+    int ba1isPremium;
+    float ba1Area;
+    
+    int ba2isPremium;
+    float ba2Area = 0;
+    
+    int ba3isPremium;
+    float ba3Area = 0;
+
+    int areaSocialIsPremium;
+    float areaSocialArea;
+    
+    int hasPatio;
+    float patiol;
+    float patiow;
+    
+    int isGarageSimpleDouble;
+    float garageArea;
+    
+    cout << "Calculadora de precios para TuttiCuadrati" << endl;
+    cout << "Seccion 1 -- Habitaciones" << endl;
+    
+    cout << "Cuantas habitaciones quiere?. de 1 a 3:"<< endl;
+    cin >> numHabitaciones;
+    
+    if(numHabitaciones < 1){
+        numHabitaciones = 1;
+    }
+    
+    if(numHabitaciones > 3){
+        numHabitaciones = 3;
+    }
+    
+    
+    
+    cout << "Ingrese el largo de la habitacion 1" << endl;
+    cin >> hab1l;
+    
+    if(hab1l < 2){
+        hab1l = 2;
+    }
+    if(hab1l > 10){
+        hab1l = 10;
+    }
+    
+    
+    cout << "Ingrese el ancho de la habitacion 1" << endl;
+    cin >> hab1w;
+    
+    if(hab1w < 2){
+        hab1w = 2;
+    }
+    if(hab1w > 10){
+        hab1w = 10;
+    }
+    
+    if(numHabitaciones > 1){
+        cout << "Ingrese el largo de la habitacion 2" << endl;
+        cin >> hab2l;
+    
+        if(hab2l < 2){
+            hab2l = 2;
+        }
+        if(hab2l > 10){
+            hab2l = 10;
+        }
+    
+    
+        cout << "Ingrese el ancho de la habitacion 2" << endl;
+        cin >> hab2w;
+    
+        if(hab2w < 2){
+            hab2w = 2;
+        }
+        if(hab2w > 10){
+            hab2w = 10;
+        }  
+        if(numHabitaciones > 2){
+            cout << "Ingrese el largo de la habitacion 3" << endl;
+            cin >> hab3l;
+        
+            if(hab3l < 2){
+                hab3l = 2;
+            }
+            if(hab3l > 10){
+                hab3l = 10;
+            }
+        
+        
+            cout << "Ingrese el ancho de la habitacion 3" << endl;
+            cin >> hab3w;
+        
+            if(hab3w < 2){
+                hab3w = 2;
+            }
+            if(hab2w > 10){
+             hab3w = 10;
+            }   
+        }
+    }
+    float areahab1 = hab1l * hab1w;
+    float areahab2 = hab2l * hab2w;
+    float areahab3 = hab3l * hab3w;
+    
+    float areaTotalHabs = areahab1 + areahab2 + areahab3;
+    cout << "Seccion 2 -- Banos" << endl;
+    
+    cout << "Cuantos banos quiere?. de 1 a 3:"<< endl;
+    cin >> numBanos;
+    
+    if(numBanos < 1){
+        numBanos = 1;
+    }
+    
+    if(numBanos > 3){
+        numBanos = 3;
+    }
+    
+    cout << "El primer bano es premium>? 0:No, 1: Si" << endl;
+    cin >> ba1isPremium;
+    
+    if(ba1isPremium > 1 || ba1isPremium < 0){
+        cout << "Codigo invalido, se asume que no es premium." << endl;
+    }
+    
+    if(ba1isPremium == 0){
+        ba1Area = 5;
+    }
+    
+    if(ba1isPremium == 1){
+        ba1Area = 9;
+    }
+    
+    if(numBanos > 1){
+        cout << "El segundo bano es premium>? 0:No, 1: Si" << endl;
+        cin >> ba2isPremium;
+    
+        if(ba2isPremium > 1 || ba2isPremium < 0){
+            cout << "Codigo invalido, se asume que no es premium." << endl;
+        }
+        
+        if(ba2isPremium == 0){
+            ba2Area = 5;
+        }
+        
+        if(ba2isPremium == 1){
+            ba2Area = 9;
+        }
+        
+        if(numBanos > 2){
+            cout << "El tercer bano es premium>? 0:No, 1: Si" << endl;
+            cin >> ba3isPremium;
+        
+            if(ba3isPremium > 1 || ba3isPremium < 0){
+                cout << "Codigo invalido, se asume que no es premium." << endl;
+            }
+            
+            if(ba3isPremium == 0){
+                ba3Area = 5;
+            }
+            
+            if(ba3isPremium == 1){
+                ba3Area = 9;
+            }   
+        }
+    }
+    float areaTotalBanos = ba1Area + ba2Area + ba3Area;
+    
+    cout << "Seccion 3 -- Area social" << endl;
+    
+    cout << "El area social es premium? 0:No, 1: Si" << endl;
+    cin >> areaSocialIsPremium;
+    
+    if (areaSocialIsPremium > 1 || areaSocialIsPremium < 0){
+        cout << "Codigo invalido, se asumira que no es premium" << endl;
+    }
+    
+    if(areaSocialIsPremium == 0){
+        areaSocialArea = 20;
+    }
+    if(areaSocialIsPremium == 1){
+        areaSocialArea = 40;
+    }
+    
+    float areaSocialAreaTotal = areaSocialArea;
+    
+    cout << "Seccion 4 -- Patio" << endl;
+    cout << "La casa tiene patio? 0: No, 1: Si" << endl;
+    cin >> hasPatio;
+    
+    if(hasPatio > 1 || hasPatio < 0){
+        cout << "Codigo invalido, se asumira que no tiene" << endl;
+    }
+    if(hasPatio == 1){
+        cout << "Ingrese el largo del patio" << endl;
+        cin >> patiol;
+        
+        if(patiol < 2){
+            patiol = 2;
+        }
+        if(patiol > 8){
+            patiol = 8;
+        }
+        
+        cout << "Ingrese el ancho del patio" << endl;
+        cin >> patiow;
+        
+        
+        if(patiow < 2){
+            patiow = 2;
+        }
+        if(patiow > 8){
+            patiow = 8;
+        }
+    }
+    float areaPatio = patiol * patiow;
+    cout << "Seccion 5 -- Garage" << endl;
+    cout << "El garage es doble? 0: No, 1: si" << endl;
+    cin >> isGarageSimpleDouble;
+    
+    if (isGarageSimpleDouble > 1 || isGarageSimpleDouble < 0){
+        cout << "Codigo invalido, se asumira que es simple" << endl;
+    }
+    
+    if(isGarageSimpleDouble == 0){
+        garageArea = 10;
+    }
+    if(isGarageSimpleDouble == 1){
+        garageArea = 20;
+    }
+    
+    float totalArea = areaTotalHabs + areaTotalBanos + areaSocialAreaTotal + areaPatio + garageArea;
+    
+    float totalAreaNoGarage = totalArea - garageArea;
+    totalAreaNoGarage = totalAreaNoGarage * 1.25;
+    
+    
+    float precioCasa;
+    if(totalAreaNoGarage < 100){
+    
+        precioCasa = totalAreaNoGarage * 8000000 + garageArea * 5000000;
+    }else{
+        precioCasa = totalAreaNoGarage * 9000000 + garageArea * 5000000;
+    }
+    if(precioCasa >= 1000000000 ){
+        precioCasa = precioCasa * 0.95;
+    }
+    cout << "El precio Total de la casa es " << precioCasa << endl;
+    cout << "Segundo Ejercicio"<< endl;
+    int x, y;
+    cout << "Ingrese el valor de x" << endl;
+    cin >>x;
+    cout << "Ingrese el valor de y"<< endl;
+    cin >> y;
+    float a = pow((sqrt(((5 * x) + (sqrt(pow(y,x-1)))/(y + 2 * x)))),3);
+    float b = (pow(pow(x,2),3))/(pow(y,3) * x + 1);
+    float c = 3 * (sqrt(3 + sqrt(x - 1)));
+    cout << "El resultado es " << a - (b-c);
+    
+ }
